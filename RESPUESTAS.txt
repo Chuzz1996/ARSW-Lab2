@@ -1,0 +1,19 @@
+1. Identificacion
+Condiciones de carrera:
+	1. Comer un ratón al tiempo dos o más serpientes.
+	2. Comer una flecha roja dos o más serpientes al tiempo
+	3. Comer un rayo dos o más serpientes al tiempo.
+Uso inadecuado de colecciones:
+	1. Uso de LinkenList en la serpiente, esto da el problema de comer
+	   varias cosas al tiempo
+Uso innecesario de esperas activas:
+	1. Preguntar todo el tiempo si esta muerta la serpiente mientras 
+	   se ejecuta el programa
+2. Soluciones
+Condiciones de carrera:
+	1. Sincronizar la revision de los elementos que comen los ratones
+Uso inadecuado de colecciones:
+	1. Cambiar el uso de la LinketList por una coleccion concurrente
+	   en este caso se utilizo ConcurrentLinkedDeque
+Uso innecesario de esperas activas:
+	1.
