@@ -51,6 +51,7 @@ public class SnakeApp {
     private String waiting = Thread.State.WAITING.toString();
     private int maximo;
     private int minimo;
+    private boolean primera = true;
     
 
     public SnakeApp() {
@@ -163,9 +164,7 @@ public class SnakeApp {
                     maximo = snakes[n].getBody().size();
                 }n++;
             }else if(snakes[n].isSnakeEnd()){
-                if(snakes[n].getBody().size()<minimo){
-                    minimo = snakes[n].getBody().size();
-                }n++;
+                n++;
             }
         }
         maximoActual.setText("Maximo Actual "+maximo);
@@ -180,4 +179,10 @@ public class SnakeApp {
         }
     }
 
+    public synchronized void morir(Snake snake){
+        if(primera){
+            minimo = snake.getBody().size();
+            primera = false;
+        }
+    } 
 }
